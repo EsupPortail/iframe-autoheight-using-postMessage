@@ -42,7 +42,7 @@
 	var docElt = document.documentElement;
 
 	var height = isWebKit ? docElt["scrollHeight"] : // Chrome & Safari & Opera
-	             isIE ? document.body["scrollHeight"] :
+	             isIE ? document.body["scrollHeight"] + 10 :
 	             isOpera ? (docElt["offsetHeight"] > 20 ? docElt["offsetHeight"] : docElt["scrollHeight"]) :
 	             docElt["offsetHeight"]; // Firefox
 	return height;
