@@ -32,17 +32,17 @@
 <body>
  Test iframe-autoheight-using-postMessage: <a href="test.xhtml">on</a> <a href="test.xhtml?off">off</a>
  <div class="left">
-  <div class="border"><iframe src="test-content.xhtml?p=3" /></div>
-  <div class="border"><iframe src="test-content.xhtml?p=2" /></div>
+  <div class="border"><iframe src="test-content.xhtml?p=3"></iframe></div>
+  <div class="border"><iframe src="test-content.xhtml?p=2"></iframe></div>
  </div>
  <div class="right">
-  <div class="border"><iframe src="test-content.xhtml?p=0" /></div>
-  <div class="border"><iframe src="test-content.xhtml?p=1" /></div>
+  <div class="border"><iframe src="test-content.xhtml?p=0"></iframe></div>
+  <div class="border"><iframe src="test-content.xhtml?p=1"></iframe></div>
  </div>
 
-<script src="http://code.jquery.com/jquery.min.js" type="text/javascript" />
+<script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
 <!-- below is commented since we want to load script conditionally for tests
-<script src="iframe-autoheight-using-postMessage.js" type="text/javascript" />
+<script src="iframe-autoheight-using-postMessage.js" type="text/javascript"></script>
 -->
 <script language="javascript" type="text/javascript">
   if (!document.URL.match("\\boff\\b")) {
