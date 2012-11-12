@@ -1,4 +1,7 @@
-(function () {
+var postMessage_resize_iframe_in_parent;
+if (!postMessage_resize_iframe_in_parent) {
+    postMessage_resize_iframe_in_parent = true;
+  (function () {
     var resizedByUs = false;
     var previousHeights;
 
@@ -139,4 +142,5 @@
     if (window['cssToLoadIfInsideIframe']) 
 	loadCSS(window['cssToLoadIfInsideIframe']);
 
-})();
+  })();
+}
