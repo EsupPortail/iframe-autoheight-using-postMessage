@@ -135,7 +135,7 @@ if (!postMessage_resize_iframe_in_parent) {
 	if (kind !== "load" && !changed) {
 	    // ignore
 	    resizedByUs = false;
-	} else if (kind === "windowResize" && resizedByUs && height < previousHeight) {
+	} else if (kind === "windowResize" && resizedByUs && (height < previousHeight || window.resizeIframe_disableDangerousWindowResize)) {
 	    mylog("new heights ignored")
 	    resizedByUs = false;
 	} else if (height > 20) {
