@@ -219,5 +219,26 @@ if (!postMessage_resize_iframe_in_parent) {
     if (window['cssToLoadIfInsideIframe']) 
 	loadCSS(window['cssToLoadIfInsideIframe']);
 
+    function xhrPing(url) {
+         if (!window.XMLHttpRequest) return;
+	 mylog("xhrPing " + url);
+         var xhr = new XMLHttpRequest();
+         xhr.open("GET", url, true);
+         xhr.send(null);
+    }
+
+    function ping_to_increase_session_timeout(params) {
+      var interval = params.app - 1;
+      var nb = Math.ceil(params.wanted / interval) - 1;
+      mylog("ping_to_increase_session_timeout: " + nb + " times every " + interval + " minutes");
+      var id = setInterval(function() { 
+	  xhrPing(window.location.href);
+	  if (--nb == 0) clearInterval(id);
+      }, interval * 60 * 1000);
+    }
+
+    var params = window.bandeau_ENT && window.bandeau_ENT.ping_to_increase_session_timeout;
+    if (params) ping_to_increase_session_timeout(params);
+
   })();
 }
