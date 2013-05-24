@@ -5,15 +5,15 @@ if (!postMessage_resize_iframe_in_parent) {
     var resizedByUs = false;
     var previousHeight;
 
+    var mylog = function() {};
+    if (window['console'] !== undefined) { mylog = function(s) { console.log(s); }; } 
+    //else { mylog = function(s) { alert(s); }; }
+
     if (parent == window) return;
 
     var target = parent.postMessage ? parent : 
 	(parent.document.postMessage ? parent.document : undefined);
     if (typeof target == "undefined") return;
-
-    var mylog = function() {};
-    if (window['console'] !== undefined) { mylog = function(s) { console.log(s); }; } 
-    //else { mylog = function(s) { alert(s); }; }
     
 
 ////////////////////////////////////////////////////////////////////////////////
