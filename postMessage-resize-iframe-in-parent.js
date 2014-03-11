@@ -139,6 +139,9 @@ if (!postMessage_resize_iframe_in_parent) {
 	    mylog("new heights ignored")
 	    resizedByUs = false;
 	} else if (height > 20) {
+            var horiz_scroll_height = 20;
+            height += horiz_scroll_height;
+
 	    mylog("sending height " + height);
 	    target.postMessage("iframeHeight " + height, "*");
 	    resizedByUs = true;

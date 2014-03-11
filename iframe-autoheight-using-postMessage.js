@@ -1,8 +1,5 @@
 (function ($) {
     var receiveIframeHeight = function(frameWindow, height) {
-        var horiz_scroll_heigth = 20;
-        height = height + horiz_scroll_heigth;
-
         $("iframe").each(function () {
             if (this.contentWindow === frameWindow) this.height = height;
         });
