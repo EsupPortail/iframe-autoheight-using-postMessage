@@ -167,7 +167,7 @@ if (!postMessage_resize_iframe_in_parent) {
         if (!intervalId) {
            intervalId = setInterval(checkResize, 500);
         }
-        intervalCount = 4;
+        intervalCount = Math.round((window.mayRegisterCheckResizeTime || 2) * 1000 / 500);
     }
 
 
