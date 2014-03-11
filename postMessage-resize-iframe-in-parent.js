@@ -1,3 +1,5 @@
+// Version 1.0
+
 var postMessage_resize_iframe_in_parent;
 if (!postMessage_resize_iframe_in_parent) {
     postMessage_resize_iframe_in_parent = true;
