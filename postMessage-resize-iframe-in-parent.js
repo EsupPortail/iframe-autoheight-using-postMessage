@@ -6,7 +6,7 @@ if (!postMessage_resize_iframe_in_parent) {
     var previousHeight;
 
     var mylog = function() {};
-    if (window['console'] !== undefined) { mylog = function(s) { console.log(s); }; } 
+    //if (window['console'] !== undefined) { mylog = function(s) { console.log(s); }; } 
     //else { mylog = function(s) { alert(s); }; }
 
     if (parent == window) return;
